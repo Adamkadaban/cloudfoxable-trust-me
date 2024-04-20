@@ -3,6 +3,10 @@ name: Steal stuff for cloudfoxable
 on:
     workflow_dispatch: {}
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
     deploy_preview_cleanup:
         name: Steal creds
