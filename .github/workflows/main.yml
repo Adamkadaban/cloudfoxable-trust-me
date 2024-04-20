@@ -1,8 +1,7 @@
 name: Steal stuff for cloudfoxable
 
 on:
-    pull_request:
-        types: [closed]
+    workflow_dispatch: {}
 
 jobs:
     deploy_preview_cleanup:
