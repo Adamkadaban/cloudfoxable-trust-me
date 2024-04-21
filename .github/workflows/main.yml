@@ -26,4 +26,3 @@ jobs:
                   aws --region us-west-2 ssm get-parameter --with-decryption --name trust-him
                   aws --region us-west-2 ssm get-parameter --with-decryption --name trust-me
                   aws --region us-west-2 ssm get-parameter --with-decryption --name trust-them
-                  aws --region us-west-2 ssm get-parameter --with-decryption --name trust-*
